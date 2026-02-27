@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 
-	"github.com/technicallyjosh/protoc-gen-enum-json-string/internal/generator"
+	"github.com/dotjoshrc/protoc-gen-enum-json-string/internal/generator"
 	"google.golang.org/protobuf/compiler/protogen"
 )
 

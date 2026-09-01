@@ -1,0 +1,10 @@
+[tools]
+go = "1.27.0"
+golangci-lint = "2.13.2"
+
+[tasks]
+[tasks.lint]
+run = "golangci-lint run ./..."
+
+[tasks.test]
+run = "go test -v ./..."

@@ -5,8 +5,8 @@ JSON.
 
 ## Why?
 
-I don't use the protojson lib and want to allow for string enum values instead
-of the default integers when using JSON.
+If you don't use the protojson lib and want to allow for string enum values
+instead of the default integers when using JSON, this is for you.
 
 ## Install
 

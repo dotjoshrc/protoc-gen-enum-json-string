@@ -54,14 +54,14 @@ func (g *Generator) Run() error {
 
 		fileBuffer := bytes.Buffer{}
 
-		_, err := fileBuffer.WriteString(fmt.Sprintf(header, *file.Proto.Name, file.GoPackageName))
+		_, err := fmt.Fprintf(&fileBuffer, header, *file.Proto.Name, file.GoPackageName)
 		if err != nil {
 			return err
 		}
 
 		// Top scoped enums.
 		for _, enum := range file.Enums {
-			_, err := fileBuffer.WriteString(fmt.Sprintf(implementations, enum.GoIdent.GoName))
+			_, err := fmt.Fprintf(&fileBuffer, implementations, enum.GoIdent.GoName)
 			if err != nil {
 				return err
 			}
@@ -73,7 +73,7 @@ func (g *Generator) Run() error {
 		totalLen += len(enums)
 
 		for _, enum := range enums {
-			_, err := fileBuffer.WriteString(fmt.Sprintf(implementations, enum.GoIdent.GoName))
+			_, err := fmt.Fprintf(&fileBuffer, implementations, enum.GoIdent.GoName)
 			if err != nil {
 				return err
 			}
